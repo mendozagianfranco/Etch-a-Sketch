@@ -23,8 +23,9 @@ function createGrid() {
         container.appendChild(div);
     }
 
-    let divs = document.querySelectorAll('.container > div'); // Sets the height and width of the divs according to the chosen grid size.
+    let divs = document.querySelectorAll('.container > div');
     divs.forEach((divs) => {
+        // Sets the height and width of the divs according to the chosen grid size.
         divs.style.width = `calc(100% / ${inputUser})`;
         divs.style.height = `calc(100% / ${inputUser})`;
     });
