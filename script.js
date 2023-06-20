@@ -1,6 +1,38 @@
 let container = document.querySelector('.container');
+let btnChange = document.querySelector('.btn');
 
-for (let i = 0; i < 256; i++) {
-    let div = document.createElement('div');
-    container.appendChild(div);
+btnChange.addEventListener('click', createGrid);
+
+function createGrid() {
+    container.innerHTML = ''; // Delete the grid that was there before
+    let inputUser = prompt(
+        //Request grid size per side from the user.
+        'Insert grid side dimension. From 1 up to a maximum of 100',
+        ''
+    );
+
+    if (inputUser < 1 || inputUser > 100) {
+        alert('Invalid size. Enter a number between 1 and 100');
+    }
+
+    let sizeGrid = inputUser * inputUser; // Calculate number of divs to be added to the grid
+
+    for (let i = 0; i < sizeGrid; i++) {
+        // Create grid
+        let div = document.createElement('div');
+        container.appendChild(div);
+    }
+
+    let divs = document.querySelectorAll('.container > div'); // Sets the height and width of the divs according to the chosen grid size.
+    divs.forEach((divs) => {
+        divs.style.width = `calc(100% / ${inputUser})`;
+        divs.style.height = `calc(100% / ${inputUser})`;
+    });
+
+    divs.forEach((divs) => {
+        // Changes div background when the mouse hovers over it
+        divs.addEventListener('mouseover', function () {
+            divs.setAttribute('class', 'coloured');
+        });
+    });
 }
