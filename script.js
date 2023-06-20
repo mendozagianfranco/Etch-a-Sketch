@@ -33,7 +33,8 @@ function createGrid() {
     divs.forEach((divs) => {
         // Changes div background when the mouse hovers over it
         divs.addEventListener('mouseover', function () {
-            divs.setAttribute('class', 'coloured');
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            divs.style.backgroundColor = `#${randomColor}`;
         });
     });
 }

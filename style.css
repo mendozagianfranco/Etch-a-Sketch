@@ -34,7 +34,3 @@ body::-webkit-scrollbar {
 .container > div {
     border: 1px solid #fff;
 }
-
-.coloured {
-    background: #000;
-}
