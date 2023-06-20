@@ -3,3 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    align-items: stretch;
+}
+
+.container > div {
+    border: 1px solid #fff;
+    width: calc(100vw / 16);
+    height: calc(100vh / 16);
+}
